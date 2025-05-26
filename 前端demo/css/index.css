@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+.upload {
+  width: 150px;
+  height: 150px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  border: 2px solid;
+}
+
+.upload.select .upload-select {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload.select .upload-select .iconfont {
+  display: block;
+  font-size: 3em;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.upload-select .iconfont:hover {
+  color: burlywood;
+}
+
+.upload-select input {
+  display: none;
+}
+
+.upload .preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -999;
+}
+
+.upload * {
+  display: none;
+}
+
+.upload.progress .preview {
+  display: block;
+}
+
+.upload.progress .upload-progress {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload.progress .upload-progress * {
+  display: block;
+}
+
+.upload.progress .upload-progress::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.upload-progress .pp {
+  width: 80%;
+  color: #fff;
+  text-align: center;
+}
+.upload-progress .pp .bar {
+  width: 100%;
+  height: 5px;
+  background: #fff;
+  border-radius: 50px;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-progress .pp .bar::before {
+  content: "";
+  width: calc(1% * var(--percent));
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #f9d600;
+}
+
+.upload.done .upload-done {
+  display: block;
+}
+
+.upload.done .upload-done * {
+  display: block;
+}
+
+.upload.done .upload-done .iconfont {
+  color: #fff;
+  font-size: 2em;
+  text-align: right;
+  cursor: pointer;
+}
+
+.upload.done .upload-done .iconfont:hover {
+  color: #f9d600;
+}
+
+.upload.done .preview {
+  display: block;
+}
