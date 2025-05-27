@@ -12,7 +12,7 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
 
-// Serve static files from the uploads directory
+// 开放直接访问 uploads 文件夹下图片权限
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Set up multer for handling multipart/form-data
